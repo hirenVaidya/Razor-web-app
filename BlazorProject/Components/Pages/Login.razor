@@ -1,0 +1,46 @@
+﻿@page "/login"
+
+<h3>Login</h3>
+
+<div class="container mt-4" style="max-width:400px">
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input class="form-control" @bind="Email" />
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" @bind="Password" />
+    </div>
+
+    <button class="btn btn-primary" @onclick="login">
+        Login
+    </button>
+
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <div class="alert alert-info mt-3">
+            @Message
+        </div>
+    }
+
+</div>
+
+@code {
+    private string Email = "";
+    private string Password = "";
+    private string Message = "";
+
+    private void login()
+    {
+        if (Email == "admin@gmail.com" && Password == "123456")
+        {
+            Message = "Login Successful";
+        }
+        else
+        {
+            Message = "Invalid Email or Password";
+        }
+    }
+}

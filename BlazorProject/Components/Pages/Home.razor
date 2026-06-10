@@ -1,7 +1,51 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
 
-<h1>Hello, world!</h1>
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <h3>Login</h3>
+                </div>
 
-Welcome to your new app.
+                <div class="card-body">
+                    <form method="post">
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email"
+                                   class="form-control"
+                                   asp-for="Email"
+                                   placeholder="Enter email" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password"
+                                   class="form-control"
+                                   asp-for="Password"
+                                   placeholder="Enter password" />
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input type="checkbox"
+                                   class="form-check-input"
+                                   asp-for="RememberMe" />
+                            <label class="form-check-label">
+                                Remember Me
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Login
+                        </button>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
